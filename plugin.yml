@@ -1,0 +1,4 @@
+name: OresomeData
+main: io.github.psgs.oresomedata.OresomeData
+version: 1.0
+softdepend: [OresomeCoin, WorldEdit, MapsPlugin, OresomeBattles, RaidHouse]

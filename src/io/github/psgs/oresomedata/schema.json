@@ -1,0 +1,66 @@
+{
+    "_id": "5063114bd386d8fadbd6b004",
+    "uuid": "d6938711-6efc-4057-97e5-86aba8f6ed2b",
+    "name": "psgs",
+    "coins": 10,
+    "stats": {
+        "kills": 6621,
+        "deaths": 6352,
+        "kd": 1.04,
+        "ffawins": 5,
+        "infectionwins": 36,
+        "highestkillstreak": 11
+    },
+    "raidhouse": {
+        "recognition": 560,
+        "tier": 2,
+        "totalraids": 182,
+        "successfulraids": 158,
+        "failedraids": 24,
+        "rerollamount": 11
+    },
+    "forums": {
+        "messages": 179,
+        "likes": 103,
+        "trophypoints": 43
+    },
+    "maps": [
+        {
+            "ElementsII": {
+                "name": "elements2",
+                "fullName": "Elements II",
+                "creators": ["_Moist", "psgs", "broddikill"],
+                "gamemodes": ["KOTH"],
+                "inrotation": false
+            },
+            "TheBowl": {
+                "name": "bowl",
+                "fullName": "The Bowl",
+                "creators": ["_Moist", "psgs", "niceman506", "broddikill"],
+                "gamemodes": ["INFECTION", "KOTH"],
+                "inrotation": false
+            },
+            "TropicalPaths": {
+                "name": "tropical",
+                "fullName": "Tropical Paths",
+                "creators": ["_Moist", "psgs", "Evil_Emo"],
+                "gamemodes": ["TDM", "CTF", "KOTH"],
+                "inrotation": false
+            },
+            "WarTrauma": {
+                "name": "trauma",
+                "fullName": "War Trauma",
+                "creators": ["_Moist", "niceman506", "psgs"],
+                "gamemodes": ["TDM"],
+                "inrotation": false
+            }
+        }
+    ],
+    "mapsplugin": {
+        "commits": 162,
+        "additions": 10493,
+        "deletions": 4626
+    },
+    "firstjoin": "09/06/2012",
+    "smphours": 271
+}

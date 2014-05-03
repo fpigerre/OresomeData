@@ -1,0 +1,11 @@
+#########################################
+# OresomeData                           #
+# An OresomeCraft big-data system       #
+#########################################
+
+mongodb:
+  host: localhost
+  port: '27017'
+  database: oresomedata
+  username: root
+  password: password
