@@ -28,9 +28,6 @@ public class MongoDatabaseManager {
             // Authenticate using constructor instead of deprecated DB method
             MongoCredential credential = MongoCredential.createMongoCRCredential(mongodb_user, mongodb_db, mongodb_password.toCharArray());
             mongo = new MongoClient(Arrays.asList(new ServerAddress(mongodb_host, Integer.parseInt(mongodb_port))), Arrays.asList(credential));
-            DB database = mongo.getDB(mongodb_db);
-            DBCollection table = database.getCollection("users");
-
         } catch (UnknownHostException ex) {
             System.out.println("An error occurred while trying to connect to the MongoDB database!");
         }

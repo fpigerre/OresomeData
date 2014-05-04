@@ -13,7 +13,7 @@ public class ConnectionListener implements Listener {
     }
 
     DB database = MongoDatabaseManager.mongo.getDB(MongoDatabaseManager.mongodb_db);
-    DBCollection table = database.getCollection("users");
+    DBCollection table = database.getCollection("players");
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
@@ -29,7 +29,7 @@ public class ConnectionListener implements Listener {
         } else {
             BasicDBObject playerDocument = (BasicDBObject) cursor.curr();
             playerDocument.put("name", event.getPlayer().getName());
-            table.update(cursor.curr(), playerDocument);
+            table.insert(playerDocument);
         }
     }
 }

@@ -115,5 +115,20 @@
             <artifactId>oresomecoin</artifactId>
             <version>1.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.oresomecraft</groupId>
+            <artifactId>OresomeBattlesAPI</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oresomecraft</groupId>
+            <artifactId>MapsPlugin</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kohsuke</groupId>
+            <artifactId>github-api</artifactId>
+            <version>1.49</version>
+        </dependency>
     </dependencies>
 </project>

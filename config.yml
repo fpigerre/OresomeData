@@ -9,3 +9,5 @@ mongodb:
   database: oresomedata
   username: root
   password: password
+
+githubtoken:

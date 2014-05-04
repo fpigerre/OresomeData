@@ -3,7 +3,7 @@
     "uuid": "d6938711-6efc-4057-97e5-86aba8f6ed2b",
     "name": "psgs",
     "coins": 10,
-    "stats": {
+    "statistics": {
         "kills": 6621,
         "deaths": 6352,
         "kd": 1.04,

@@ -13,7 +13,7 @@ Using MongoDB comes with several advantages, notably:
 - MongoDB is horizontally scalable, allowing for extra database servers to be created or retired as OresomeCraft's average player count fluctuates
 - MongoDB data schemas can be updated as new tools are integrated with OresomeCraft; this means database conversions and transfers are seldom needed
 
-### Example Documents/Schema
+### Example Document/Schema
 
 ```json
 {
@@ -21,7 +21,7 @@ Using MongoDB comes with several advantages, notably:
     "uuid": "d6938711-6efc-4057-97e5-86aba8f6ed2b",
     "name": "psgs",
     "coins": 10,
-    "stats": {
+    "statistics": {
         "kills": 6621,
         "deaths": 6352,
         "kd": 1.04,
