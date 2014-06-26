@@ -4,7 +4,9 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
-import com.oresomecraft.OresomeBattles.api.BattlePlayer;
+import com.oresomecraft.OresomeBattles.BattlePlayer;
+import com.oresomecraft.coin.CoinAPI;
+import com.oresomecraft.coin.Wallet;
 import com.oresomecraft.maps.Map;
 import com.oresomecraft.maps.MapsPlugin;
 import org.bukkit.Bukkit;
@@ -64,18 +66,23 @@ public class PluginDataManager {
         }
     }
 
-    public void updateOresomeCoinData(Player player) {
+    public void updateOresomeCoinData(final Player player) {
         BasicDBObject searchQuery = new BasicDBObject();
         searchQuery.put("uuid", player.getUniqueId().toString());
         DBCursor cursor = playerTable.find(searchQuery);
 
-        BasicDBObject playerDocument = (BasicDBObject) cursor.curr();
-        // TODO Coins
+        final BasicDBObject playerDocument = (BasicDBObject) cursor.curr();
+        Bukkit.getScheduler().runTaskAsynchronously(OresomeData.getInstance(), new Runnable() {
+            public void run() {
+                Wallet wallet = CoinAPI.getWallet(player);
+                playerDocument.put("coins", wallet.getBalance());
+            }
+        });
         playerTable.update(cursor.curr(), playerDocument);
     }
 
     public void updateMapsData() {
-        if (Bukkit.getServer().equals("battles")) {
+        if (Bukkit.getServer().getName().equals("battles")) {
             for (Map map : MapsPlugin.getMaps().values()) {
                 BasicDBObject searchQuery = new BasicDBObject();
                 searchQuery.put("name", map.getName());
@@ -86,13 +93,9 @@ public class PluginDataManager {
                     mapDocument.put("_id", map.getName());
                     mapDocument.put("name", map.getName());
                     mapDocument.put("fullName", map.getFullName());
-
-                    String creatorString = map.getCreators();
-                    String[] creators = creatorString.replaceAll("\band|,", "").split(" ");
-                    mapDocument.put("creators", creators);
-
-                    String gameModesString = map.getModes().toString();
-                    String[] gameModes = gameModesString.replaceAll(",", "").split(" ");
+                    // TODO: Update with new creator array
+                    mapDocument.put("creators", map.getCreators());
+                    String[] gameModes = map.getModes().toString().replaceAll(",", "").split(" ");
                     mapDocument.put("gamemodes", gameModes);
 
                     // TODO: inRotation()
