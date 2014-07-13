@@ -118,7 +118,7 @@
         <dependency>
             <groupId>com.oresomecraft</groupId>
             <artifactId>OresomeBattlesAPI</artifactId>
-            <version>4.0.5</version>
+            <version>4.0.7</version>
         </dependency>
         <dependency>
             <groupId>com.oresomecraft</groupId>
